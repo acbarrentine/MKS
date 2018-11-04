@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/Build/Output/MKS.exe",
             "args": [
-                "C:/Users/acbarrentine/Source/MKS"
+                "C:/Users/acbarrentine/Source/MKS/Tests/Scripts"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

@@ -16,9 +16,9 @@
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
+# Build temporaries
+.ninja_*
+*.pdb
 
 # Compiled Static libraries
 *.lai
