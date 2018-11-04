@@ -1,5 +1,5 @@
-#include <iostream>
-#include <filesystem>
+#include "PCH.h"
+#include "SourceFile.h"
 
 void Usage()
 {
@@ -14,9 +14,8 @@ int main(int argc, const char* argv[])
         return -1;
     }
 
-    std::filesystem::path sourceDir(argv[1]);
-    sourceDir.make_preferred();
-    std::cout << "Scanning " << sourceDir << "\n";
+    const std::filesystem::path sourceDir = std::filesystem::path(argv[1]).lexically_normal();
+    std::cout << "Scanning " << sourceDir << std::endl;
 
     try
     {
@@ -24,18 +23,18 @@ int main(int argc, const char* argv[])
         {
             if (entry.is_regular_file())
             {
-                std::filesystem::path path = entry.path();
+                const std::filesystem::path path = entry.path();
                 if (path.extension() == ".mks")
                 {
-                    path.make_preferred();
-                    std::cout << path << '\n';
+                    SourceFile source(path.lexically_normal());
+                    source.Echo();
                 }
             }
         }
     }
     catch (std::filesystem::filesystem_error& err)
     {
-        std::cerr << "Error " << err.code() << ": " << err.what() << "\n";
+        std::cerr << "Error " << err.code() << ": " << err.what() << std::endl;
     }
  
     return 0;

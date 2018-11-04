@@ -14,5 +14,6 @@ rule link
   command = lld-link -debug $in -out:$out -machine:x64 -subsystem:console -libpath:"$msvc-path/$msvc-version/lib/x64" -libpath:"$windows-sdk-path/$windows-sdk-version/um/x64" -libpath:"$windows-sdk-path/$windows-sdk-version/ucrt/x64"
   description = link $out
 
-build Output/MKS.exe : link Intermediate/MKS.o  
+build Output/MKS.exe : link Intermediate/MKS.o Intermediate/SourceFile.o
 build Intermediate/MKS.o : compile ../Source/MKS.cpp
+build Intermediate/SourceFile.o : compile ../Source/SourceFile.cpp
