@@ -1,0 +1,15 @@
+0: float (4 bytes)
+  struct Compiler(32): 00 00 00 40 cc cc cc cc 20 00 00 00 00 00 00 00 02 00 00 00 02 00 00 00 02 00 00 00 cc cc cc cc 
+8: struct TArray<struct Statement * __ptr64> (16 bytes)
+24: int (4 bytes)
+32: struct Statement * __ptr64 * __ptr64 (16 bytes)
+48: Class ID (8 bytes)
+  struct Statement(24): 01 00 00 00 00 00 00 00 14 00 00 00 cd cd cd cd 28 00 00 00 cd cd cd cd 
+56: int (4 bytes)
+64: int (4 bytes)
+72: Class ID (8 bytes)
+  struct Statement(24): 01 00 00 00 00 00 00 00 64 00 00 00 cd cd cd cd c8 00 00 00 cd cd cd cd 
+80: int (4 bytes)
+88: int (4 bytes)
+18446742057369392408: int (4 bytes)
+18446742057369392412: int (4 bytes)
